@@ -1,0 +1,15 @@
+LOAD DATA 
+CHARACTERSET UTF8
+INFILE 'Commune_Tuples.csv'
+TRUNCATE
+INTO TABLE Commune
+FIELDS TERMINATED BY ';' TRAILING NULLCOLS 
+(codeInsee "to_char(:codeInsee)",
+nomC "upper(:nomC)",
+altitude,
+codePostal "to_char(:codePostal)",
+longitude_radian,
+latitude_radian,
+Population99,
+Surface
+)

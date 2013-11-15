@@ -1,0 +1,20 @@
+
+CREATE OR REPLACE PROCEDURE sup_tabs_sch is
+
+CURSOR curs is
+	select table_name from user_tables;
+monExc exception;
+BEGIN
+	for tab_c in curs
+	loop
+		execute immediate 'drop table '||tab_c.table_name||' cascade constraints';
+		dbms_output.put_line('La table '||tab_c.table_name||'a bien été supprimée');
+		if tab_c.table_name is null then raise monExc;
+		end if;
+	end loop;
+exception
+	when monExc then raise_application_error(-20000, 'il n''ya aucune table');
+end;
+/
+	
+

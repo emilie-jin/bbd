@@ -1,0 +1,15 @@
+SQL> select object_name,object_type from user_objects;
+
+OBJECT_NAME                    OBJECT_TYPE                                      
+------------------------------ ------------------------------                   
+TRANSFERT                      PROCEDURE                                        
+SUP_VIEWS_SCH                  PROCEDURE                                        
+SUP_TABS_SCH                   PROCEDURE                                        
+GRILLESALAIRES                 PROCEDURE                                        
+AUGSALAIRE                     FUNCTION                                         
+AUGMENTATION                   PROCEDURE                                        
+AUGEMENTATION                  PROCEDURE                                        
+
+7 rows selected.
+
+SQL> spool off
